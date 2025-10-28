@@ -1,0 +1,83 @@
+:root {
+  --bg: #0f1724;
+  --card: #0b1220;
+  --accent: #ffb400;
+  --text: #f4f7fa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Inter, Segoe UI, Arial, sans-serif;
+  background: linear-gradient(180deg, #071226 0%, #0f1724 100%);
+  color: var(--text);
+}
+
+.wrapper {
+  max-width: 900px;
+  margin: 36px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  margin: 8px 0 18px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.stage {
+  position: relative;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.15));
+  border-radius: 16px;
+  padding: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 360px;
+  box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+  margin-bottom: 18px;
+  overflow: hidden;
+}
+
+/* Imagen de Goku */
+.goku {
+  width: 300px;
+  max-width: 80%;
+  z-index: 1;
+}
+
+/* Cortina */
+.curtain {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: linear-gradient(to top, #000000, #222222);
+  z-index: 2;
+  animation: liftCurtain 3s ease-in-out forwards;
+}
+
+/* Animación de la cortina que se levanta */
+@keyframes liftCurtain {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-100%); }
+}
+
+/* Texto */
+.nota {
+  color: rgba(244,247,250,0.75);
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+@media (max-width:520px){
+  .goku{width:60%;}
+  .stage{padding:22px;min-height:260px;}
+}
+
